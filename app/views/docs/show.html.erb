@@ -1,13 +1,15 @@
-<div class="">
-  <article class="">
+<div class="wrapping">
+  <article class="doc-show">
     <h3><%= @doc.title%></h3>
     <section>
-      <%= @doc.content%>
+      <%= simple_format(@doc.content)%>
     </section>
   </article>
+
+
+  <div class="button-container">
+    <%= link_to 'All Docs', docs_path, class: "button" %>
+    <%= link_to 'Edit', edit_doc_path(@doc) , class: "button" %>
+    <%= link_to 'Delete', doc_path(@doc), method: :delete, data: {confirm: "Are you sure?"} ,  class: "button" %>
+  </div>
 </div>
-
-
-<%= link_to 'All Docs', docs_path %>
-<%= link_to 'Edit', edit_doc_path(@doc) %>
-<%= link_to 'Delete', doc_path(@doc), method: :delete, data: {confirm: "Are you sure?"} %>

@@ -35,3 +35,42 @@
     }
   }
 }
+
+
+.wrapping {
+
+
+  .doc-show {
+    margin: 0 auto;
+    width: 60%;
+    border: solid 1px #ccc;
+    padding: 10px;
+    box-shadow: 4px 6px 4px #ccc;
+    border-radius: 3px;
+
+    h3 {
+      font-size: 28px;
+      border-bottom: solid 1px #ccc;
+    }
+
+    p {
+      line-height: 160%;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  .button-container {
+    margin: 0 auto;
+    text-align: center;
+
+    margin-top: 45px;
+    margin-bottom: 40px;
+
+    .button {
+      border: solid 3px #ccc;
+      padding: 10px;
+      color: #678934;
+      text-decoration: none;
+    }
+  }
+}
