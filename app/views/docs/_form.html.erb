@@ -1,0 +1,9 @@
+<%= form_for @doc do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content%>
+  <%= f.text_area :content %>
+
+  <%= f.button :submit%>
+<% end %>
