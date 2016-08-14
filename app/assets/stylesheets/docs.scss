@@ -1,3 +1,37 @@
 // Place all the styles related to the Docs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.wrapper_with_padding {
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+
+  .clear-fix {
+    margin-top: 30px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .doc {
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    box-shadow: 8px 8px 3px #ccc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: black;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 25px;
+    }
+
+    .date {
+      text-align: left;
+      font-size: 12px;
+    }
+  }
+}
