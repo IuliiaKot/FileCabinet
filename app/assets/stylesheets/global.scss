@@ -1,0 +1,34 @@
+nav {
+  height: 100px;
+  background: #678934;
+
+  #left a {
+    float: left;
+    width: 30%;
+
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  #right {
+    float: right;
+    width: 65%;
+    
+    text-align: right;
+    padding-top: 20px;
+
+    li {
+      display: inline;
+      margin-right: 20px;
+
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,2 +1,30 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div id="banner">
+  <div class="banner_content">
+    <h1>File Cabinet</h1>
+    <p>
+      Your life's work. Organized always.
+    </p>
+    <button type="button"> <%= link_to "Enter", new_user_registration_path%></button>
+  </div>
+</div>
+
+<div id="callouts">
+  <div class="callout_inner">
+    <div class="wrapper">
+      <div class="callout">
+        <h2>Organize</h2>
+        <p>
+          Pop-up umami venmo brunch, cardigan schlitz organic bitters you probably haven't heard of them pickled four loko bushwick. Chillwave cold-pressed leggings, humblebrag artisan polaroid gastropub kickstarter. Squid raw denim occupy, slow-carb food truck tote bag migas williamsburg. Skateboard chicharrones hammock food truck swag gastropub, brooklyn bushwick austin gluten-free gochujang locavore deep v.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="bottom">
+    <div class="wrapper">
+      <h2>Go Ahead!</h2>
+      <br>
+      <button type="button" name="button"><%= link_to "Join Now", new_user_registration_path%></button>
+    </div>
+</div>
