@@ -1,9 +1,9 @@
 <%= form_for @doc do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.label :title, class: 'title-label' %>
+  <%= f.text_field :title , class: 'title-input'%>
 
-  <%= f.label :content%>
-  <%= f.text_area :content %>
+  <%= f.label :content, class: 'content-label'%>
+  <%= f.text_area :content, class: 'content-text' %>
 
-  <%= f.button :submit%>
+  <%= f.button :submit, class: 'button'%>
 <% end %>

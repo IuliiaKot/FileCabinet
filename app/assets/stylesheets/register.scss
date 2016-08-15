@@ -1,0 +1,55 @@
+.wrapper_with_padding {
+
+  .login-form {
+    // background-color: #787828;
+    border: solid 1px #678934;
+    border-radius: 3px;
+    box-shadow: 0px 5px 4px #678934;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 18px;
+
+
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-field input {
+      width: 45%;
+      height: 23px;
+      padding: 5px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
+
+    .form-field label {
+      font-weight: bolder;
+    }
+    .actions .reg-button {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 15px 40px 15px 40px;
+      background-color: #678934;
+      border: none;
+      border-radius: 2px;
+
+    }
+
+    #error_explanation {
+      background-color: rgba(255,0,0,0.7);
+      opacity: 0.6;
+      margin-left: 3px;
+      margin-right: 3px;
+      margin-bottom: 3px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+
+      ul li {
+        text-decoration: none;
+        text-align: left;
+        color: black;
+      }
+    }
+  }
+}
