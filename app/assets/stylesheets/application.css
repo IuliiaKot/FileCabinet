@@ -13,5 +13,4 @@
  *= require_tree .
  *= require_self
  */
-@import "normalize"
-@import "main.scss"
+@import "normalize.scss"
