@@ -48,6 +48,7 @@ class DocsController < ApplicationController
 
 
     def doc_params
+      # debugger
       params.require(:doc).permit(:title, :content)
     end
 end
