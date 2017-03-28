@@ -3,6 +3,8 @@ require 'rails_helper'
 
 describe DocsController do
   let(:user) {User.create(email: "test@gmail.com", password: "123456")}
+  let(:doc) {Doc.create(title: "Rspec", content: "Today we are ...", user: user)}
+
   before { allow(controller).to receive(:current_user) { user } }
 
   describe "GET #index" do
@@ -107,4 +109,58 @@ describe DocsController do
       end
     end
   end
+
+  describe "GET #edit" do
+    it "respnse with status code 200" do
+      get :edit, params: {id: doc.id}
+      expect(response).to have_http_status 200
+    end
+
+    it "assigns a new doc to @doc" do
+      last_doc = Doc.find(doc.id)
+      get :edit, params: {id: doc.id}
+      expect(assigns(:doc)).to eq(doc)
+    end
+
+    it "render a edit template" do
+      get :edit, params: {id: doc.id}
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe "PUT #update" do
+    context "when valid params are passed" do
+      it "response with status code 302" do
+        put :update, params: {doc: {title: "JavaScript", content: "JavaScript is ..."}, id: doc.id}
+        expect(response).to have_http_status 302
+      end
+
+      it "creates a new doc in the database" do
+        put :update, params: {doc: {title: "JavaScript", content: "JavaScript is ..."}, id: doc.id}
+        expect(Doc.where(title: 'JavaScript')).to exist
+      end
+
+      it "assigns the newly created doc as @doc" do
+        put :update, params: {doc: {title: "JavaScript", content: "JavaScript is ..."}, id: doc.id}
+        expect(assigns(:doc)).to eq(Doc.last)
+      end
+
+      it "redirects to the created doc" do
+        put :update, params: {doc: {title: "JavaScript", content: "JavaScript is ..."}, id: doc.id}
+        expect(response).to redirect_to Doc.last
+      end
+    end
+  end
 end
+
+
+
+# it 'assigns a new doc to @doc' do
+#   get :new
+#   expect(assigns(:doc)).to be_a_new Doc
+# end
+#
+# it "renders the new template" do
+#   get :new
+#   expect(response).to render_template(:new)
+# end
