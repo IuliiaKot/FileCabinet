@@ -4,7 +4,8 @@ class DocsController < ApplicationController
 
   def index
     # @docs = current_user.docs
-    @docs = Doc.where(user_id: current_user)
+    # @docs = Doc.where(user_id: current_user)
+    @docs = Doc.all
   end
 
   def show
