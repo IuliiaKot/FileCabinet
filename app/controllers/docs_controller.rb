@@ -18,7 +18,7 @@ class DocsController < ApplicationController
     if @doc.save
       redirect_to @doc
     else
-      render 'new'
+      render 'new', status: 422
     end
   end
 
