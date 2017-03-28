@@ -107,6 +107,7 @@ describe DocsController do
         post :create, params: {doc: {title: '', content: "Today we are ..."}}
         expect(response).to render_template :new
       end
+
     end
   end
 
@@ -150,7 +151,46 @@ describe DocsController do
         expect(response).to redirect_to Doc.last
       end
     end
+
+    context "when invalid params are passed" do
+      it "response with status code 422" do
+        put :update, params: {doc: {title: "", content: "JavaScript is ..."}, id: doc.id}
+        expect(response).to have_http_status 422
+      end
+
+
+      it "assigns the unsaved doc as @doc" do
+        up_doc = Doc.find(doc.id)
+        put :update, params: {doc: {title: '', content: "Today we are ..."}, id: doc.id}
+        expect(assigns(:doc)).to eq(up_doc)
+      end
+
+      it "render edit template" do
+        put :update, params: {doc: {title: "", content: "JavaScript is ..."}, id: doc.id}
+        expect(response).to render_template :edit
+      end
+    end
   end
+
+  describe "DELETE #destroy" do
+    it "responds with status code 302" do
+      delete :destroy, params: { id: doc.id }
+      expect(response).to have_http_status 302
+    end
+
+    it "destroys the requested doc" do
+      # Doc.create(title: "Test", content: "Test test", user_id: user.id)
+      count = Doc.count
+      delete :destroy, params: { id: doc.id }
+      expect(Doc.count).to eq(0)
+    end
+
+    it "redirects to the doc list" do
+      delete :destroy, params: { id: doc.id }
+      expect(response).to redirect_to action: :index
+    end
+  end
+
 end
 
 
